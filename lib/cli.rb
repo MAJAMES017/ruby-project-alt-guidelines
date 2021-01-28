@@ -31,7 +31,7 @@ class CommandLineInterface
     def response_handler(user_input) #this needs to be renamed  response handler
         case(user_input)
         when "1"
-            puts "Enter your name to add to the Cut above directory:"
+            puts "Enter your name to add to the Man Bun Boi directory:"
             create_customer
             puts "Thank you for your interest in Cut Above. Your name has been added to the directory. you are ready to go!"
 
@@ -47,7 +47,7 @@ class CommandLineInterface
             puts "Do not fret, we all make mistakes! Which would you like to remove?"
             review_input = gets.chomp
             self.delete(review_input)
-            puts " POOF! #{review_input} has been removed. It's like it was never there!"
+            # puts " POOF! #{review_input} has been removed. It's like it was never there!"
          
         when "5"
             puts Date.today
@@ -121,12 +121,14 @@ class CommandLineInterface
     def delete(review)
         r1 = Review.find_by(name: "#{review}")
         r1.destroy
+        puts " POOF! #{review_input} has been removed. It's like it was never there!"
         self.return_to_main
+        
     end
 
-    # def exit_app
-    #     # is there a way to close out of the terminal
-    # end
+    def exit_app
+        # is there a way to close out of the terminal
+    end
 
 
     def majestic_man_bun
