@@ -121,12 +121,12 @@ class CommandLineInterface
     def delete(review)
         r1 = Review.find_by(name: "#{review}")
         r1.destroy
-        self.return_to_menu
+        self.return_to_main
     end
 
-    def exit_app
-        # is there a way to close out of the terminal
-    end
+    # def exit_app
+    #     # is there a way to close out of the terminal
+    # end
 
 
     def majestic_man_bun
