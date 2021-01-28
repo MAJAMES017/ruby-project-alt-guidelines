@@ -3,6 +3,13 @@
 class CommandLineInterface
 #   jack of all fades, cut above, directors cut, man bun bois,
     def greet
+
+        puts "
+        █▄─▀█▀─▄██▀▄─██▄─▀█▄─▄███▄─▄─▀█▄─██─▄█▄─▀█▄─▄███▄─▄─▀█─▄▄─█▄─▄█─▄▄▄▄█
+        ██─█▄█─███─▀─███─█▄▀─█████─▄─▀██─██─███─█▄▀─█████─▄─▀█─██─██─██▄▄▄▄─█
+        ▀▄▄▄▀▄▄▄▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▀▀▄▄▄▄▀▀▀▄▄▄▄▀▀▄▄▄▀▀▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀
+        "
+6
         puts "Welcome to Man Bun Bois, the worlds number 1 source for the majestic man bun!"
         puts "Let's get started! Please select from the following options:"
         puts "1. Create a Man Bun Boi account to get started. your account will allow you to view, create, and edit your reviews of man bun artists across the continent."
@@ -13,9 +20,9 @@ class CommandLineInterface
         puts "5. view photos of majestic man buns"
         puts "6. Exit"
         user_input = gets.chomp
-        self.response(user_input) #name issue here also
+        self.response_handler(user_input) #name issue here also
     end
-    def response(user_input) #this needs to be renamed  response handler
+    def response_handler(user_input) #this needs to be renamed  response handler
         case(user_input)
         when "1"
             puts "Enter your name to add to the Cut above directory:"
@@ -31,6 +38,7 @@ class CommandLineInterface
         when "5"
             puts "Wow, just got a new cut! Sorry for the low-res photo! feel as majestic as a pack of tigers."
             puts self.majestic_man_bun
+            self.return_to_main
          
     
         else
@@ -80,6 +88,7 @@ class CommandLineInterface
         r1.destroy
         self.return_to_menu
     end
+
 
     def majestic_man_bun
         puts "        ───────────────────███──────────
