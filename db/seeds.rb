@@ -15,7 +15,7 @@ end
     Review.create(name:Faker::Marketing.buzzwords, description:Faker::Quote.most_interesting_man_in_the_world,rating:rand(1...10), customer: Customer.all.sample, barber: Barber.all.sample) #do i need the ids genereated here )
 end
 
-puts "seeds loaded"
+puts "the fields have been tilled and fresh batch of seeds has been loaded my lord"
 
 
 
