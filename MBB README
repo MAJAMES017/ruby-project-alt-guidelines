@@ -4,6 +4,20 @@ MAN BUN BOIS is the tech breakthrough that the world has been waiting for. Man B
 
 INSTRUCTIONS:
 
+To start, you'll need to fork this repository from your GitHub account and clone it to your local machine. Once this is done, please cd into that directory and open the file with your text editor. If set u correctly, once inside the directory, type "code ." to open it up.
+
+Before running this program, make sure to run "bundle install" from your terminal to ensure that you have the proper gem dependencies. The following gems are required in your Gemfile.rb:
+
+    gem "activerecord", '~> 5.2'
+    gem "sinatra-activerecord"
+    gem "sqlite3", '~> 1.3.6'
+    gem "pry"
+    gem "require_all"
+    gem "faker"
+    gem "rake"
+
 
 
 Once this is complete, run the program by typing "ruby bin/run.rb" from inside your terminal.
+
+after running "ruby bin/run.rb" you will see the CLI interface for MBB. follow the on screen prompts to access elements of the app. 
