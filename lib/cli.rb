@@ -14,11 +14,11 @@ class CommandLineInterface
         puts "Welcome to Man Bun Bois, the worlds number 1 source for the majestic man bun!"
         puts "To get this party started! Please select from the following:"
 
-        puts "1. Create a Man Bun Boi account to get initiated into the fraternity of the bun. Your account will allow you to view, create, and edit your reviews of man bun artists across the continent."
+        puts "1. Create a Man Bun Boi account to get initiated into the fraternity of The Bun. Your account will allow you to view, create, and edit your reviews of man bun artists across the continent."
 
-        puts "2. View the Man Bun Boi review database of some of the most prestegious man bun artists."
+        puts "2. View the Man Bun Boi review database of some of the most prestigious man bun artists."
 
-        puts "3. Changed your mind? Update an existing Man Bun review."
+        puts "3. Have things changed? Update an existing Man Bun review rating."
 
         puts "4. Need to get rid of the evidence? Remove a previous review."
 
@@ -36,7 +36,7 @@ class CommandLineInterface
             puts "Thank you for your interest in Cut Above. Your name has been added to the directory. you are ready to go!"
 
         when "2"
-            puts "Welcome, here's our catalog! This includes the barber's name, a brief description about their experience, and rating (1 - 10) given by other Cut Above users."
+            puts "Welcome, here's our catalog! This includes the barber's id, a brief description about their experience, and rating (1 - 10) given by other MBB users."
             self.view_reviews
 
         when "3"
@@ -89,6 +89,11 @@ class CommandLineInterface
         self.return_to_main
     end
 
+    def rtn_rand_review
+        # like an arcade claw game, but with none of the control over your prize
+        Review.all.sample
+    end
+
     def rtn_rand_customer
         Customer.all.sample.name
     end
@@ -114,7 +119,7 @@ class CommandLineInterface
         puts "Please enter the new rating for the review that you are updating:"
         upd_input_new_rating = gets.chomp
         score.update(rating: "#{upd_input_new_rating}")
-        puts "A shiney new rating has been given. Nice... unless it was a lower rating."
+        # puts "A shiney new rating has been given. Nice... unless it was a lower rating."
         self.return_to_main
     end
 
@@ -127,7 +132,7 @@ class CommandLineInterface
     end
 
     def exit_app
-        # is there a way to close out of the terminal
+    #    this doesnt do anything but it apears that it smoothly closes the applicaton. need to test.
     end
 
 

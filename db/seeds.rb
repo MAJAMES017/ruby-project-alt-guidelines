@@ -3,7 +3,6 @@ Customer.delete_all
 Barber.delete_all
 
 
-
 10.times do
     Customer.create(name:Faker::Games::WarhammerFantasy.hero, location:Faker::Games::Witcher.location)
 end
