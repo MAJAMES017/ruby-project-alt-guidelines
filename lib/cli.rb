@@ -96,8 +96,7 @@ class CommandLineInterface
     def create_customer
         customer_name = gets.chomp
         customer_location = gets.chomp
-        c = Customer.new(name: "#{customer_name}", location: "#{customer_location}")
-        c.save
+        c = Customer.create(name: "#{customer_name}", location: "#{customer_location}")
         self.return_to_main
     end
 
@@ -105,11 +104,12 @@ class CommandLineInterface
         review_name = gets.chomp
         review_desc = gets.chomp
         review_rating = gets.chomp
-        r = Review.new(name: "#{review_name}", description: "#{review_desc}", rating: "#{review_rating}")
-        r.save
+        r = Review.create(name: "#{review_name}", description: "#{review_desc}", rating: "#{review_rating}", customer: Customer.all.sample, barber: Barber.all.sample)
+
         self.return_to_main
     end
-
+    
+    
     def rand_review
         Review.all.sample
         
@@ -152,7 +152,7 @@ class CommandLineInterface
     end
 
     def delete(review)
-        r1 = Review.find_by(name: "#{review}")
+        r1 = Review.find_by(name: review)
         r1.destroy
         puts "it's done. you can fogetabotit."
     
