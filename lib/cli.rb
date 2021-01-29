@@ -76,7 +76,7 @@ class CommandLineInterface
             
          
         else
-            puts "Hmm, we seem to have a rebel on our hands."
+            puts "Hmm, we seem to have a rebelious type on our hands."
             puts "You have been exiled from the Man Bun Bois."
             puts "press ENTER to claim your fate"
             ex = gets.chomp
