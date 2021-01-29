@@ -104,7 +104,7 @@ class CommandLineInterface
         review_name = gets.chomp
         review_desc = gets.chomp
         review_rating = gets.chomp
-        r = Review.create(name: "#{review_name}", description: "#{review_desc}", rating: "#{review_rating}", customer: Customer.all.sample, barber: Barber.all.sample)
+        r = Review.create(name: "#{review_name}", description: "#{review_desc}", rating: "#{review_rating}", customer: Customer.last, barber: Barber.all.sample)
 
         self.return_to_main
     end
